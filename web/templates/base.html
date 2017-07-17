@@ -50,14 +50,14 @@
             <li class="social-links">
                 {% get_current_language as language %}
                 {% trans "Languages:" %}
-                <a {% if language == "en" %}class="active" {% endif %}
-                    href="http://en.arguman.org">English</a>
-                <a {% if language == "tr" %}class="active" {% endif %}
-                    href="http://tr.arguman.org">Türkçe</a>
-                <a {% if language == "zh-hans" %}class="active" {% endif %}
-                    href="http://ch.arguman.org">{% trans "中文" %}</a>
-                <a {% if language == "fr" %}class="active" {% endif %}
-                    href="http://fr.arguman.org">{% trans "Français" %}</a><br>
+                {% for lang_code, lang_name in LANGUAGES %}
+                    {% language lang_code %}
+                     <a {% if language == lang_code %}class="active" {% endif %}
+                        href="http://{{ lang_code }}.{{ SITE_URL }}">{{ lang_name }}</a>
+                    {% endlanguage %}
+                {% endfor %}
+                <br/>
+
                 {% trans "Follow on twitter:" %} <a href="https://twitter.com/argumentmapping" target="_blank">@argumentmapping</a> <br />
 		        Subreddit: <a href="https://www.reddit.com/r/arguman" target="_blank">/r/arguman</a>
             </li>
