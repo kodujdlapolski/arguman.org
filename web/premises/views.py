@@ -623,15 +623,23 @@ class RandomArgumentView(RedirectView):
     permanent = False
 
     def get_redirect_url(self, *args, **kwargs):
-        argument = Contention.objects.annotate(
+        arguments = Contention.objects.annotate(
             premise_count=Count('premises')
         ).filter(
             premise_count__gt=2,
             language=normalize_language_code(get_language())
-        ).order_by(
+        )
+        if not arguments.exists():
+            arguments = Contention.objects.filter(language=normalize_language_code(get_language()))
+
+        arguments = arguments.order_by(
             '?'
-        )[0]
-        return argument.get_absolute_url()
+        )
+
+        if arguments.first():
+            return arguments.first().get_absolute_url()
+        else:
+            return reverse("contentions_latest")
 
 
 class ArgumentPublishView(LoginRequiredMixin, DetailView):
