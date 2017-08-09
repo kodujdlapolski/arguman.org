@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 """
 Django settings for arguman project.
 
@@ -102,12 +103,15 @@ DEFAULT_LANGUAGE = 'en'
 
 BASE_DOMAIN = 'arguman.org'
 
-AVAILABLE_LANGUAGES = (
-    'tr',
-    'en',
-    'ch',
-    'fr'
+LANGUAGES = (
+    ('tr', u'Türkçe'),
+    ('en', u'English'),
+    ('ch', u'中文'),
+    ('fr', u'Français'),
+    ('pl', u'Polski'),
 )
+
+AVAILABLE_LANGUAGES = tuple([lang_code for lang_code, lang_name in LANGUAGES])
 
 LANGUAGE_CODE_MAPPING = {
     'ch': 'zh-Hans'
@@ -172,6 +176,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.core.context_processors.request",
+    "main.context_processors.site",
     "django.contrib.messages.context_processors.messages")
 
 SOCIAL_AUTH_COMPLETE_URL_NAME  = 'socialauth_complete'
