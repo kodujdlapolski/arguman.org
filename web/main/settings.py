@@ -118,7 +118,7 @@ LANGUAGES = (
     ('pl', u'Polski'),
 )
 
-AVAILABLE_LANGUAGES = [lang_code for lang_code, lang_name in LANGUAGES]
+AVAILABLE_LANGUAGES = tuple([lang_code for lang_code, lang_name in LANGUAGES])
 
 LANGUAGE_CODE_MAPPING = {
     'ch': 'zh-Hans'

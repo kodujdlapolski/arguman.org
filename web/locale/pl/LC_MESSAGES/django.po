@@ -53,22 +53,22 @@ msgstr "zawiera w sobie"
 
 #: premises/forms.py:33
 msgid "You should write a premise or link an argument."
-msgstr "Podaj proszę przesłankę lub link do argumentu."
+msgstr "Podaj proszę argument lub link do tezy."
 
 #: premises/models.py:40 templates/premises/contention.html:6
 #: templates/premises/contention_list.html:13 templates/premises/thread.html:31
 msgid "but"
-msgstr "ale"
+msgstr "przeciw"
 
 #: premises/models.py:41 templates/premises/contention.html:5
 #: templates/premises/contention_list.html:12 templates/premises/thread.html:36
 msgid "because"
-msgstr "ponieważ"
+msgstr "za"
 
 #: premises/models.py:42 templates/premises/contention.html:7
 #: templates/premises/contention_list.html:14 templates/premises/thread.html:41
 msgid "however"
-msgstr "ale"
+msgstr "warto zauważyć"
 
 #: premises/models.py:46
 # https://pl.wikipedia.org/wiki/Petitio_principii
@@ -181,29 +181,29 @@ msgstr "Źródła"
 
 #: premises/models.py:460
 msgid "Parent"
-msgstr "Przesłanka"
+msgstr "Argument"
 
 #: premises/models.py:461
 msgid ""
 "The parent of premise. If you don't choose anything, it will be a main "
 "premise."
-msgstr "Przesłanka rozumowania. Domyślnie zostanie wybrana podstawowa przesłanka."
+msgstr "Argument, do którego się odnosisz. Domyślnie zostanie wybrana podstawowa teza."
 
 #: premises/models.py:465
 msgid "Premise Type"
-msgstr "Typ przesłanki"
+msgstr "Typ argumentu"
 
 #: premises/models.py:469
 msgid "Premise Content"
-msgstr "Treść przesłanki"
+msgstr "Treść argumentu"
 
 #: premises/models.py:477
 msgid "Related Argument"
-msgstr "??? Related Argument"
+msgstr "Oprzyj się na istniejącej tezie"
 
 #: premises/models.py:478
 msgid "You can also associate your premise with an argument."
-msgstr ""
+msgstr "Zacznij wpisywać tekst, a podpowiemy na jakich istniejących tezach możesz się oprzeć."
 
 #: premises/models.py:704
 msgid "Reason"
@@ -211,7 +211,7 @@ msgstr "Przyczyna"
 
 #: premises/models.py:705
 msgid "Please explain that why the premise is a fallacy."
-msgstr "Wyjaśnij proszę dlaczego ta przesłanka jest błędem logicznym."
+msgstr "Wyjaśnij proszę dlaczego ten argument  zawiera błąd logiczny."
 
 #: premises/models.py:707
 msgid "Fallacy Type"
@@ -271,7 +271,7 @@ msgid ""
 "\">register</a> to add a premise for this argument."
 msgstr ""
 "<a href=\"%(login_url)s\">Zaloguj się</a> lub <a href=\"%(register_url)s"
-"\">zarejestruj</a>, aby dodać przesłankę do tej tezy."
+"\">zarejestruj</a>, aby dodać argument przeciw lub za tą tezą."
 
 #: templates/auth/password_reset_complete.html:8
 msgid "The password changed successfully."
@@ -362,7 +362,7 @@ msgstr "Tezy"
 
 #: templates/auth/profile.html:55
 msgid "Premises"
-msgstr "Przesłanki"
+msgstr "Argumenty"
 
 #: templates/auth/profile.html:56
 msgid "Fallacy Reports"
@@ -390,7 +390,7 @@ msgstr "Użytkownicy z popularnymi dyskusjami"
 
 #: templates/auth/profile.html:107
 msgid "Most supported premises"
-msgstr "Najbardziej popierane przesłanki"
+msgstr "Najbardziej popierane argumenty"
 
 #: templates/auth/register.html:7 templates/auth/register.html.py:17
 msgid "Register"
@@ -419,7 +419,7 @@ msgstr "Platforma Analizy Tez. Zaproponuj i dyskutuj nad tezami."
 
 #: templates/base.html:7
 msgid "Argument analysis and mapping platform"
-msgstr "Analiza tez poprzez mapowanie przesłanek"
+msgstr "Analiza tez poprzez mapowanie argumentów"
 
 #: templates/base.html:24
 msgid "Announcement:"
@@ -523,7 +523,7 @@ msgstr "utworzył tezę:"
 #: templates/newsfeed/fallacy.html:4
 #, python-format
 msgid "reported <strong>%(fallacy)s</strong> for a premise."
-msgstr "zgłosił <strong>%(fallacy)s</strong> dla przesłanki."
+msgstr "zgłosił <strong>%(fallacy)s</strong> dotyczący argumentu."
 
 #: templates/newsfeed/following.html:3
 #, python-format
@@ -536,7 +536,7 @@ msgstr ""
 
 #: templates/newsfeed/premise.html:6
 msgid "associated with another argument"
-msgstr ""
+msgstr "odwołał(a) się do innej tezy"
 
 #: templates/notifications.html:8
 msgid "Notifications"
@@ -545,7 +545,7 @@ msgstr "Powiadomienia"
 #: templates/notifications/added-premise-for-contention.html:7
 #, python-format
 msgid "added a <span class=\"premise-type %(class)s\">%(label)s</span> premise"
-msgstr "dodał(a) <span class=\"premise-type %(class)s\">%(label)s</span> przesłankę"
+msgstr "dodał(a) <span class=\"premise-type %(class)s\">%(label)s</span> argument"
 
 #: templates/notifications/added-premise-for-premise.html:6
 #, python-format
@@ -560,11 +560,11 @@ msgstr "obserwuje cię."
 #: templates/notifications/reported-as-fallacy.html:4
 #, python-format
 msgid "Your premise reported as <strong>%(label)s</strong>"
-msgstr "Twoja przesłanka została zgłoszona jako <strong>%(label)s</strong>"
+msgstr "Twój argument został zgłoszony jako <strong>%(label)s</strong>"
 
 #: templates/notifications/supported-a-premise.html:6
 msgid "supported your premise"
-msgstr "poparł twoją przesłankę"
+msgstr "poparł(a) twój argument"
 
 #: templates/nouns/channel_detail.html:15
 msgid "Regular users"
@@ -622,7 +622,7 @@ msgstr "Zobacz wszystkie"
 #: templates/premises/premise.html:90 templates/premises/thread.html:105
 #: templates/premises/tree_view.html:26
 msgid "add premise"
-msgstr "dodaj przesłankę"
+msgstr "dodaj argument"
 
 #: templates/premises/actions.html:7 templates/premises/premise.html:96
 #: templates/premises/thread.html:97
@@ -647,11 +647,11 @@ msgstr ""
 
 #: templates/premises/base_contention.html:54
 msgid "RANDOM"
-msgstr ""
+msgstr "LOSOWA TEZA"
 
 #: templates/premises/base_contention.html:60
 msgid "RELATED ARGUMENTS"
-msgstr ""
+msgstr "POWIĄZANE TEZY"
 
 #: templates/premises/base_contention.html:75
 msgid "share"
@@ -672,6 +672,7 @@ msgstr "Lista"
 #: templates/premises/contention.html:11 templates/premises/premise.html:32
 msgid "sender:"
 msgstr "wysłał(a):"
+# TODO delete doublecolon here
 
 #: templates/premises/contention_list.html:22
 #: templates/premises/tree_view.html:66
@@ -686,7 +687,7 @@ msgstr "procent poparcia"
 #: templates/premises/contention_list.html:28
 #: templates/premises/tree_view.html:71
 msgid "Neutral support and objection rate."
-msgstr ""
+msgstr "Argumenty za i przeciw są wyważone."
 
 #: templates/premises/contention_list.html:62
 msgid "No results found."
@@ -753,10 +754,10 @@ msgid ""
 "contention. </li> <li> because: A reason for proof the contention. </li> "
 "<li> however: An additional situation for the premise. </li> </ul>"
 msgstr ""
-"Typ przesłanki. Może być to: <ul> <li> but: An objection against the "
+"Typ argumentu. Może być to: <ul> <li> but: An objection against the "
 "contention. </li> <li> because: A reason for proof the contention. </li> "
 "<li> however: An additional situation for the premise. </li> </ul>"
-# TODO rozbić powyższe na wydzielone opisy
+# TODO break those in separated descriptions
 
 #: templates/premises/examples/sources.html:2
 msgid ""
@@ -768,7 +769,7 @@ msgstr ""
 
 #: templates/premises/list_view.html:20
 msgid "Go to parent premise"
-msgstr "Przejdź do nadrzędnej przesłanki"
+msgstr "Przejdź do nadrzędnego argumentu"
 
 #: templates/premises/new_contention.html:9
 msgid "Save and continue to edit"
@@ -776,7 +777,7 @@ msgstr "Zapisz i przejdź dalej do edycji"
 
 #: templates/premises/new_premise.html:9
 msgid "The parent premise:"
-msgstr "Nadrzędna przesłanka:"
+msgstr "Nadrzędny argument:"
 
 #: templates/premises/new_premise.html:29
 msgid "Characters remaining: "
@@ -823,7 +824,7 @@ msgstr "edytuj"
 
 #: templates/premises/premise.html:97 templates/premises/thread.html:98
 msgid "Are you sure to remove this premise?"
-msgstr "Czy na pewno chcesz usunąć tę przesłankę?"
+msgstr "Czy na pewno chcesz usunąć ten argument?"
 
 #: templates/premises/premise.html:105 templates/premises/premise.html:111
 #: templates/premises/premise.html:113 templates/premises/thread.html:119
@@ -836,7 +837,8 @@ msgstr "zgłoś błąd logiczny"
 
 #: templates/premises/report.html:7
 msgid "The premise:"
-msgstr "Przesłanka:"
+msgstr "Argument:"
+# TODO clear here and in other places double commas
 
 #: templates/premises/report.html:13
 # TODO are capital letters that important?
@@ -861,11 +863,11 @@ msgstr "Trwa ładowanie drzewa..."
 
 #: templates/premises/tree_view.html:39
 msgid "The argument have no premises."
-msgstr "Teza nie posiada przesłanek."
+msgstr "Brak argumentów za i przeciw tezie."
 
 #: templates/premises/tree_view.html:41
 msgid "Add a premise"
-msgstr "Dodaj przesłankę"
+msgstr "Dodaj argument"
 
 #: templates/premises/tree_view.html:44
 msgid "Edit argument"
@@ -889,15 +891,15 @@ msgstr "UCZESTNIK"
 
 #: templates/search/contention.html:12 templates/stats/contention.html:12
 msgid "BECAUSE"
-msgstr ""
+msgstr "ZA"
 
 #: templates/search/contention.html:16 templates/stats/contention.html:16
 msgid "BUT"
-msgstr "ALE"
+msgstr "PRZECIW"
 
 #: templates/search/contention.html:20 templates/stats/contention.html:20
 msgid "HOWEVER"
-msgstr "JEDNAK"
+msgstr "WARTO ZAUWAŻYĆ"
 
 #: templates/search/profile.html:9 templates/stats/profile.html:9
 msgid "FOLLOWER"
@@ -909,7 +911,7 @@ msgstr "TEZA"
 
 #: templates/search/profile.html:17 templates/stats/profile.html:17
 msgid "PREMISE"
-msgstr "PRZESŁANKA"
+msgstr "ARGUMENT"
 
 #: templates/search/profile.html:21
 msgid "SUPPORT"
@@ -929,7 +931,7 @@ msgstr "użytkownicy"
 
 #: templates/search/search.html:20
 msgid "premises"
-msgstr "przesłanki"
+msgstr "argumenty"
 
 #: templates/stats.html:6 templates/tabs.html:13
 msgid "Statistics"
@@ -949,11 +951,11 @@ msgstr "najbardziej angażujące tezy"
 
 #: templates/stats.html:12
 msgid "most supported premises"
-msgstr "najbardziej popierane przesłanki"
+msgstr "najbardziej popierane argumenty"
 
 #: templates/stats.html:13
 msgid "most fallacy premises"
-msgstr "najbardziej błędne przesłanki"
+msgstr "najbardziej błędne argumenty"
 
 #: templates/stats.html:18
 msgid "this week"
