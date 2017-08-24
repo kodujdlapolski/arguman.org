@@ -43,7 +43,9 @@ INSTALLED_APPS = (
 
     'typogrify',
     'social_auth',
+    'adminsortable2',
     'django_gravatar',
+    'django_extensions',
     'rest_framework',
     'rest_framework.authtoken',
     'profiles',
