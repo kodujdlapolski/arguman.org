@@ -101,19 +101,26 @@ REDIRECTED_PATHS = (
     '/new-argument'
 )
 
-DEFAULT_LANGUAGE = 'en'
+LANGUAGE_CODE = 'en'
 
 BASE_DOMAIN = 'arguman.org'
 
+TITLE = 'argüman'
+# LOGO_PATH = 'img/logo.png'  # path relative to the /static/ directory; if no logo is defined then TITLE is used
+
+CONTACT_SUBREDDIT = '/r/arguman'
+CONTACT_TWITTER = 'argumentmapping'
+CONTACT_EMAIL = 'argumananalizi@gmail.com'
+
 LANGUAGES = (
-    ('tr', u'Türkçe'),
-    ('en', u'English'),
-    ('ch', u'中文'),
-    ('fr', u'Français'),
-    ('pl', u'Polski'),
+    ('tr', u'Türkçe', 'https://tr.arguman.org'),
+    ('en', u'English', 'https://en.arguman.org'),
+    ('ch', u'中文', 'https://ch.arguman.org'),
+    ('fr', u'Français', 'https://fr.arguman.org'),
+    ('pl', u'Polski', 'https://debata.org.pl'),
 )
 
-AVAILABLE_LANGUAGES = tuple([lang_code for lang_code, lang_name in LANGUAGES])
+AVAILABLE_LANGUAGES = tuple([lang_code for lang_code, lang_name, lang_href in [((list(entry) + [None]*3)[:3]) for entry in LANGUAGES]])
 
 LANGUAGE_CODE_MAPPING = {
     'ch': 'zh-Hans'
