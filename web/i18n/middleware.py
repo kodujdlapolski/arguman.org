@@ -19,7 +19,7 @@ class SubdomainLanguageMiddleware(object):
         language = get_language_from_request(request)
 
         if language not in self.LANGUAGES:
-            language = settings.DEFAULT_LANGUAGE
+            language = settings.LANGUAGE_CODE
 
         querystring = request.META.get('QUERY_STRING', '')
         if querystring:
@@ -41,7 +41,7 @@ class SubdomainLanguageMiddleware(object):
         language = host[0]
 
         if settings.PREVENT_LANGUAGE_REDIRECTION:
-            language = settings.DEFAULT_LANGUAGE
+            language = settings.LANGUAGE_CODE
         elif language not in self.LANGUAGES:
             return self.redirect_homepage(request)
 

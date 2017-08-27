@@ -27,8 +27,12 @@
     {% endif %}
     <div id="logo">
         <a href="{% if user.is_anonymous %}/{% else %}{% url "newsfeed" %}{% endif %}">
-            argüman
-            <img src="{% static "img/logo.png" %}" alt=""/></a>
+            {% if LOGO_PATH %}
+            <img src="{% static LOGO_PATH %}" alt=""/>
+            {%  else %}
+            {{ TITLE }}
+            {% endif %}
+        </a>
     </div>
     <nav>
         <ul id="site-navigation">
@@ -49,17 +53,24 @@
             </li>
             <li class="social-links">
                 {% get_current_language as language %}
+                {% if LANGUAGES %}
                 {% trans "Languages:" %}
-                {% for lang_code, lang_name in LANGUAGES %}
+                {% for lang_code, lang_name, lang_href in LANGUAGES %}
                     {% language lang_code %}
                      <a {% if language == lang_code %}class="active" {% endif %}
-                        href="http://{{ lang_code }}.{{ SITE_URL }}">{{ lang_name }}</a>
+                        href="{% if not DEBUG %}{{ lang_href }}{% else %}http://{{ lang_code }}.{{ SITE_URL }}{% endif %}">
+                         {{ lang_name }}</a>
                     {% endlanguage %}
                 {% endfor %}
                 <br/>
+                {% endif %}
 
-                {% trans "Follow on twitter:" %} <a href="https://twitter.com/argumentmapping" target="_blank">@argumentmapping</a> <br />
-		        Subreddit: <a href="https://www.reddit.com/r/arguman" target="_blank">/r/arguman</a>
+                {% if CONTACT_TWITTER %}
+                {% trans "Follow on twitter:" %} <a href="https://twitter.com/{{ CONTACT_TWITTER }}" target="_blank">@{{ CONTACT_TWITTER }}</a> <br />
+                {% endif %}
+                {% if CONTACT_SUBREDDIT %}
+		        Subreddit: <a href="https://www.reddit.com{{ CONTACT_SUBREDDIT }}" target="_blank">{{ CONTACT_SUBREDDIT }}</a>
+                {% endif %}
             </li>
         </ul>
     </nav>
@@ -80,7 +91,7 @@
             <a href="/tos">{% trans "Terms of Service" %}</a> |
             <a href="https://github.com/fatiherikli/arguman.org/issues">{% trans "Feedback" %}</a> |
             <a href="https://paypal.me/arguman">{% trans "Donate" %}</a> |
-            <a href="mailto:argumananalizi@gmail.com">argumananalizi@gmail.com</a>
+            <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a>
     </p>
     </div>
 </footer>
